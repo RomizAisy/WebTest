@@ -1,0 +1,21 @@
+:root{
+    --warna-abu:#EEEEEF;
+    --warna-merah:#E72D35;
+    --warna-biru-muda:#BAEEEC;
+    --warna-hijau-tua:#10633F;
+    --warna-cream:#FEE7AE;
+    --warna-hijau-muda:#B7DDC6;
+
+    --font-h1:60px;
+    --font-color:#112A46;
+}
+body{
+    background-color: var(--warna-hijau-muda);
+}
+.container-berhasil{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}

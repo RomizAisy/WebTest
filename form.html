@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <link rel="stylesheet" href="halaman_utama_style.css">
+    <link rel="stylesheet" href="form_style.css">
+    
+</head>
+<body>
+<!--=======================HEADER==============================-->
+    <header>
+        <nav>
+            <h3>Respati Astrid</h3>
+            <div>
+                <a href="index.html">Home</a>
+                <a href="index.html">Visi & Misi</a>
+                <a href="form.html" class="nav-button">Menjadi Relawan</a>
+            </div>
+        </nav>
+    </header>
+
+<!--=======================FORM==============================-->
+    <section class="form-section"> 
+        <div class="form-container">
+            <form action="connect.php" method="POST">
+
+                <div class="form-header">             
+                    <h1>FORMULIR PENDAFTARAN RELAWAN RESPATI ASTRID</h1>
+                    <p>Lengkapi formulir identitas dibawah ini untuk bergabung menjadi relawan Respati Astrid</p>  
+                </div>
+                
+                <div>
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" placeholder="Masukkan Nama Lengkap" id="nama" name="inputNama">
+                </div>
+        
+                <div>
+                    <label for="jenis">Jenis Kelamin</label>
+                    <input type="text" id="jenis" placeholder="Laki - laki atau Perempuan" name="inputJenis">
+                </div>
+
+                <div>
+                    <label for="tanggal-lahir">Tempat dan tanggal lahir</label>
+                    <input type="text" id="tanggal-lahir" name="tanggal-lahir" placeholder="Contoh : Surakarta, 20 Maret 2000">
+                </div>
+
+                <div>
+                    <label for="domisili">Domisili KTP</label>
+                    <input type="text" id="domisili" name="domisili" placeholder="Domisili Sesuai KTP">
+                </div>
+
+                <div>
+                    <label for="nomor-wa">Nomor WhatsApp</label>
+                    <input type="number" id="nomor-wa" name="nomor-wa" placeholder="Masukkan Nomor WhatsApp">
+                </div>
+
+                <div>
+                    <label for="pertanyaan">Darimanakah anda mengetahui Astrid Widayani</label>
+                    <input type="text" name="pertanyaan" id="pertanyaan" placeholder="Masukkan Jawaban Anda">
+                </div>
+
+                <input type="submit" value="submit" id="submitBtn">
+            
+            </form>           
+        </div>
+    </section>
+
+<!--=======================KARTU==============================-->
+    <section class="kartu-section">
+        <div class="container-kartu">
+            <div>
+                <img class="kartu-depan" src="/FOTO/KARTU DEPAN.png" alt="">
+            </div>
+            <div class="text">
+                <p id="namaTextField"></p>
+                <span id="lahirTextField"></span>
+                <span id="domisiliTextField"></span>
+                <span id="jenisTextField"></span>
+                
+            </div>
+        </div>
+    </section>
+
+<!--SCRIPT-->
+<script>   
+    const nama = document.getElementById('nama');
+    const jenis = document.getElementById('jenis');
+    const lahir = document.getElementById('tanggal-lahir');
+    const domisili = document.getElementById('domisili');
+    const submitBtn = document.getElementById('submitBtn');
+    const outputNama = document.getElementById('namaTextField');
+    const outputLahir = document.getElementById('lahirTextField');
+    const outputDomisili = document.getElementById('domisiliTextField');
+    const outputJenis = document.getElementById('jenisTextField');
+
+
+    function test(){
+        outputNama.innerHTML = nama.value;
+        outputLahir.innerHTML = lahir.value;
+        outputDomisili.innerHTML = domisili.value;
+        outputJenis.innerHTML = jenis.value;
+
+        window.print();
+    }
+
+    submitBtn.addEventListener('click',test);
+</script>
+</body>
+</html>
